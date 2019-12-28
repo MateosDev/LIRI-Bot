@@ -97,9 +97,9 @@ function movie(movieName) {
   }
 
   //CALLING OMDB API USING AXIOS
-
+ 
   var queryUrl =
-    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=3b99b04f";
   axios
     .get(queryUrl)
     .then(function(response) {
