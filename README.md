@@ -174,6 +174,7 @@ LIRI will take the text inside of random.txt and then use it to call one of LIRI
 - It should run `spotify-this-song` for `"I Want it That Way,"` as follows the random text in `random.txt` file.
 - Edit the text in random.txt to test out the feature for `movie-this`, `spotify-this-song` and `concert-this`.
 
+<img src "https://github.com/MateosDev/LIRI-Bot/blob/master/assets/images/LIRI-What-It-Says.png"/>
 
 
 <!-- CONTACT -->
