@@ -137,18 +137,17 @@ function movie(movieName) {
 
 // WHAT IT SAYS FUNCTION
 
+
+
 function theThingToDo() {
-  fs.readFile(__dirname + '/assets/TXT/random.txt', 'utf8', function(
-    error,
-    data
-  ) {
+  fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
       return console.log(error);
     }
 
-    var dataArr = data.split(', ');
+    var dataArr = data.split(", ");
 
     console.log(dataArr);
     doWhat(dataArr[0], dataArr[1]);
   });
-}
+};
