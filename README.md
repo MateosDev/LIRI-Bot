@@ -150,7 +150,7 @@ This will show the following information about the song in your terminal/bash wi
 - A preview link of the song from Spotify:
 - The album that the song is from:
 
-<img src="https://github.com/MateosDev/LIRI-Bot/blob/master/assets/images/LIRI-Spotify-This.png"/>
+<img src="https://github.com/MateosDev/LIRI-Bot/blob/master/assets/images/LIRI-Spotify-This-Song.png"/>
 
 #### `movie-this (movieName)`
 
