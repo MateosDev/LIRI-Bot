@@ -1,35 +1,36 @@
-console.log("LIRI Loaded!"); //testing functionality
+console.log('LIRI Loaded!'); //testing functionality
 
 //Requirements
 //NPM Packages - Included in Package.JSON
 //Keys
 
-require("dotenv").config();
-const fs = require("fs");
-const moment = require("moment");
-const axios = require("axios");
-const Spotify = require("node-spotify-api");
+require('dotenv').config();
+const fs = require('fs');
+const moment = require('moment');
+const axios = require('axios');
+var keys = require('./keys.js');
+const Spotify = require('node-spotify-api');
+// console.log(keys.spotify);
 var spotify = new Spotify(keys.spotify);
-var keys = require("./keys.js");
 var input = process.argv[2];
 
 //SEARCH FUNCTION
 
 function doWhat(input, userInput) {
   switch (input) {
-    case "concert-this":
+    case 'concert-this':
       bandsInTown(userInput);
       break;
 
-    case "spotify-this-song":
+    case 'spotify-this-song':
       spotifyFn(userInput);
       break;
 
-    case "movie-this":
+    case 'movie-this':
       movie(userInput);
       break;
 
-    case "do-what-it-says":
+    case 'do-what-it-says':
       theThingToDo();
       break;
 
@@ -38,18 +39,18 @@ function doWhat(input, userInput) {
   }
 }
 
-var userInput = process.argv.slice(3).join(" ");
+var userInput = process.argv.slice(3).join(' ');
 doWhat(input, userInput);
 
 //CALLING THE SPOTIFY API
 
 function spotifyFn(songName) {
   if (!songName) {
-    songName = "The Sign Ace of Base";
+    songName = 'The Sign Ace of Base';
   }
 
   spotify
-    .search({ type: "track", query: songName, limit: 5 })
+    .search({ type: 'track', query: songName, limit: 5 })
     .then(function(response) {
       var i = 0;
       for (var i = 0; i < 3; i++)
@@ -70,16 +71,16 @@ function spotifyFn(songName) {
 function bandsInTown(artist) {
   // var artist = process.argv[3];
   var queryUrl =
-    "https://rest.bandsintown.com/artists/" +
+    'https://rest.bandsintown.com/artists/' +
     artist +
-    "/events?app_id=codingbootcamp";
+    '/events?app_id=codingbootcamp';
   axios.get(queryUrl).then(function(response) {
     console.log(`
           Venue: ${response.data[0].venue.name}
           Location ${
             response.data[0].venue.region
           } + ${response.data[0].venue.city}
-          Date: ${moment(response.data[0].datetime).format("MM/DD/YYYY")}
+          Date: ${moment(response.data[0].datetime).format('MM/DD/YYYY')}
           `);
   });
 }
@@ -89,7 +90,7 @@ function bandsInTown(artist) {
 function movie(movieName) {
   // var movieName = process.argv[3];
   if (!movieName) {
-    movieName = "Mr. Nobody";
+    movieName = 'Mr. Nobody';
     console.log(
       "If you haven't watched 'Mr.Nobody,' then you should: http://www.imdb.com/title/tt0485947/" +
         "It's on Netflix"
@@ -97,9 +98,9 @@ function movie(movieName) {
   }
 
   //CALLING OMDB API USING AXIOS
- 
+
   var queryUrl =
-    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=3b99b04f";
+    'http://www.omdbapi.com/?t=' + movieName + '&y=&plot=short&apikey=trilogy';
   axios
     .get(queryUrl)
     .then(function(response) {
@@ -116,11 +117,11 @@ function movie(movieName) {
     })
     .catch(function(error) {
       if (error.response) {
-        console.log("---------------Data---------------");
+        console.log('---------------Data---------------');
         console.log(error.response.data);
-        console.log("---------------Status---------------");
+        console.log('---------------Status---------------');
         console.log(error.response.status);
-        console.log("---------------Status---------------");
+        console.log('---------------Status---------------');
         console.log(error.response.headers);
       } else if (error.request) {
         // The request was made but no response was received
@@ -128,7 +129,7 @@ function movie(movieName) {
         console.log(error.request);
       } else {
         // Something happened in setting up the request that triggered an Error
-        console.log("Error", error.message);
+        console.log('Error', error.message);
       }
       console.log(error.config);
     });
@@ -137,12 +138,15 @@ function movie(movieName) {
 // WHAT IT SAYS FUNCTION
 
 function theThingToDo() {
-  fs.readFile("random.txt", "utf8", function(error, data) {
+  fs.readFile(__dirname + '/assets/TXT/random.txt', 'utf8', function(
+    error,
+    data
+  ) {
     if (error) {
       return console.log(error);
     }
 
-    var dataArr = data.split(", ");
+    var dataArr = data.split(', ');
 
     console.log(dataArr);
     doWhat(dataArr[0], dataArr[1]);
