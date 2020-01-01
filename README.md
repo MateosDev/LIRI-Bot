@@ -120,9 +120,7 @@ SPOTIFY_SECRET= (Secret here)
 
 To use liri with node run `node liri.js <your command> <search term>`
 
-Below is a full Demo in GIF Format. If for some reason you cannot load the GIF properly, still screenshots are there as well. 
 
-<img src="https://github.com/MateosDev/LIRI-Bot/blob/master/assets/images/LIRI-Bot-Demo.gif"/>
 
 You can find some example images in the [images folder](https://github.com/MateosDev/LIRI-Bot/tree/master/assets/images) `assets>images`
 
@@ -134,6 +132,14 @@ You can find some example images in the [images folder](https://github.com/Mateo
 | `spotify-this-song` | Searches Spotify for info about a band or artist  |
 | `movie-this`        | Searches for info about the movie you entered     |
 | `do-what-it-says`   | Runs the cmd text and search term in random.txt   |
+
+
+
+Below is a full Demo in GIF Format. If for some reason you cannot load the GIF properly, still screenshots are there as well. 
+
+<img src="https://github.com/MateosDev/LIRI-Bot/blob/master/assets/images/LIRI-Bot-Demo.gif"/>
+
+
 
 #### `concert-this (artistName)`
 
