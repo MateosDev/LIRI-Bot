@@ -120,6 +120,10 @@ SPOTIFY_SECRET= (Secret here)
 
 To use liri with node run `node liri.js <your command> <search term>`
 
+Below is a full Demo in GIF Format. If for some reason you cannot load the GIF properly, still screenshots are there as well. 
+
+<img src="https://github.com/MateosDev/LIRI-Bot/blob/master/assets/images/LIRI-Bot-Demo.gif"/>
+
 You can find some example images in the [images folder](https://github.com/MateosDev/LIRI-Bot/tree/master/assets/images) `assets>images`
 
 ### Commands
