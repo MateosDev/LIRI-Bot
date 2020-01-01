@@ -137,7 +137,7 @@ You can find some example images in the [images folder](https://github.com/Mateo
 
 Below is a full Demo in GIF Format. If for some reason you cannot load the GIF properly, still screenshots are there as well. 
 
-<img src="https://github.com/MateosDev/LIRI-Bot/blob/master/assets/images/LIRI-Bot-Demo.gif"/>
+<img src="https://github.com/MateosDev/LIRI-Bot/blob/master/assets/images/Liri-Bot-Demo.gif"/>
 
 
 
